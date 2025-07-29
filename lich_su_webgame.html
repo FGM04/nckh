@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hành Trình Lịch Sử</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: url('https://i.imgur.com/I9Xn3yo.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      color: #333;
+    }
+    header {
+      background-color: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      padding: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    header img {
+      width: 60px;
+      border-radius: 50%;
+      margin-bottom: 5px;
+    }
+    .page {
+      display: none;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .active {
+      display: block;
+    }
+    .btn {
+      padding: 10px 20px;
+      background: #8B4513;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin: 10px 5px;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background: #5c3311;
+    }
+    .btn-sword {
+      border-radius: 20px;
+      background: linear-gradient(to right, #b5651d, #8b0000);
+    }
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+    nav button {
+      background: #deb887;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      margin: 5px;
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+    nav button:hover {
+      background: #d2b48c;
+    }
+    .minigame-option {
+      display: block;
+      margin: 10px 0;
+      padding: 10px;
+      background: #ffe4b5;
+      border-left: 5px solid #ff8c00;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .minigame-option:hover {
+      background: #ffdead;
+    }
+    .drag-container, .image-quiz, .crossword-container {
+      margin-top: 20px;
+    }
+    .draggable {
+      padding: 5px 10px;
+      margin: 5px;
+      background: #d2b48c;
+      display: inline-block;
+      cursor: grab;
+      border-radius: 5px;
+    }
+    .droptarget {
+      border: 2px dashed #8b0000;
+      padding: 10px;
+      margin: 10px 0;
+      min-height: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://i.imgur.com/Q8q6kVB.png" alt="Avatar">
+  <h1>Hành Trình Lịch Sử</h1>
+  <nav>
+    <button onclick="goToPage('intro')">🏠 Trang chủ</button>
+    <button onclick="goToPage('quiz')">❓ Câu hỏi</button>
+    <button onclick="goToPage('minigame')">🎮 Minigame</button>
+  </nav>
+</header>
+
+<div id="intro" class="page active">
+  <h2>📜 Giới thiệu chặng: Cải cách thời Lê sơ</h2>
+  <p>Trong lịch sử Việt Nam, thời Lê sơ dưới triều vua Lê Thánh Tông được xem là giai đoạn có nhiều cải cách sâu rộng, đặc biệt trong hành chính, giáo dục và pháp luật.</p>
+  <p>Hãy cùng trả lời một số câu hỏi nhỏ trước khi bước vào các minigame thú vị nhé!</p>
+  <button class="btn" onclick="goToPage('quiz')">Bắt đầu câu hỏi</button>
+</div>
+
+<!-- Các phần còn lại giữ nguyên như cũ -->
+
+<!-- ... Quiz, Minigame ... -->
+
+<script>
+  function goToPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+  // Giữ nguyên các function cũ khác...
+</script>
+
+</body>
+</html>
